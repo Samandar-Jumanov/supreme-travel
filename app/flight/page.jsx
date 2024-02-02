@@ -17,11 +17,8 @@ const FlightDetail = () => {
     if(!userId) alert("user id  is missing ")
     
       try {
-        const response = await fetch('/api/book-flight/', {
+        const response = await fetch('/api/book-flight', {
           method: 'POST',
-          headers: {
-            'Content-Type': 'application/json',
-          },
           body: JSON.stringify({
             userId : userId ,
             from : flight.from, 
@@ -39,7 +36,7 @@ const FlightDetail = () => {
         if(response.ok){
                 router.push(`alert?response=${response.statusText}`)
         }
-
+       console.log(response)
       } catch (error) {
         console.error('An error occurred during the fetch:', error);
       }

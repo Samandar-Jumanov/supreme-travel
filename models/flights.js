@@ -1,7 +1,7 @@
 import { model  , models  , Schema } from 'mongoose';
 
 const FlightSchema = new Schema({
-  userId: { type: String, required: true },
+  userId: { type : Schema, required: true  , },
   from: { type: String, required: true },
   to: { type: String, required: true },
   ticket: { type: String, required: true },
