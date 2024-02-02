@@ -4,22 +4,11 @@ import Flights from "@/models/flights";
 export const POST = async (request) => {
   try {
     await connectDb();
-    const { from, to, ticket, price, date, time, place, type, meals , userId } = request.json();
+    // const { from, to, ticket, price, date, time, place, type, meals , userId } = 
 
-    const newFlight =  new Flights({
-      userId  : userId ,
-      from : from ,
-      to : to,
-      ticket : ticket,
-      price : price,
-      date : date ,
-      time : time ,
-      place : place ,
-      type : type ,
-      meals : meals
-    });
+    const newFlight =  new Flights(request.json())
 
-    await newFlight.save();
+    await newFlight.save()
     
     return new Response("Succes" , { status : 201});
   } catch (error) {

@@ -1,11 +1,12 @@
 "use client";
 
-import { useSearchParams } from "next/navigation";
+import { useSearchParams , useRouter  } from "next/navigation";
 import { data } from "@/utils/plane-tickets-data";
 import Image from "next/image";
-import { useSession } from 'next-auth/react'
+import { useSession  } from 'next-auth/react'
 
 const FlightDetail = () => {
+  const router = useRouter()
   const searchParams = useSearchParams();
   const idx = searchParams.get("id");
   const flight = data[idx - 1];
@@ -22,18 +23,22 @@ const FlightDetail = () => {
             'Content-Type': 'application/json',
           },
           body: JSON.stringify({
-            from: flight.from,
-            to: flight.to,
-            ticket: flight.ticket,
-            price: flight.price, 
-            date: flight.date,
-            time: flight.time,
-            place: flight.place,
-            type: flight.type,
-            meals: flight.meals,
-            user: session.user.id,
+            userId : userId ,
+            from : flight.from, 
+            to : flight.to , 
+            ticket : flight.ticket, 
+            price : flight.price ,
+            date : flight.date,
+            time : flight.time, 
+            place : flight.place, 
+            type : flight.type, 
+            meals : flight.meals 
           }),
         });
+
+        if(response.ok){
+                router.push(`alert?response=${response.statusText}`)
+        }
 
       } catch (error) {
         console.error('An error occurred during the fetch:', error);
