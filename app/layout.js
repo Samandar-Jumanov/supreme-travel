@@ -1,3 +1,4 @@
+import Provider from "@/provider";
 
 export const metadata = {
   title: "Create Next App",
@@ -7,7 +8,11 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body>{children}</body>
+      <body>
+          <Provider>
+               {children}
+          </Provider>
+      </body>
     </html>
   );
 }
