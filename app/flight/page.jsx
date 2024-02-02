@@ -3,11 +3,44 @@
 import { useSearchParams } from "next/navigation";
 import { data } from "@/utils/plane-tickets-data";
 import Image from "next/image";
+import { useSession } from 'next-auth/react'
 
 const FlightDetail = () => {
   const searchParams = useSearchParams();
   const idx = searchParams.get("id");
   const flight = data[idx - 1];
+  const { data : session } = useSession();
+
+  const bookFlight = async () => {
+    const userId = await session.user.id
+    if(!userId) alert("user id  is missing ")
+    
+      try {
+        const response = await fetch('/api/book-flight/', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify({
+            from: flight.from,
+            to: flight.to,
+            ticket: flight.ticket,
+            price: flight.price, 
+            date: flight.date,
+            time: flight.time,
+            place: flight.place,
+            type: flight.type,
+            meals: flight.meals,
+            user: session.user.id,
+          }),
+        });
+
+      } catch (error) {
+        console.error('An error occurred during the fetch:', error);
+      }
+    } 
+  
+  
 
   return (
     <div className="flex  flex-left h-screen">
@@ -32,7 +65,7 @@ const FlightDetail = () => {
         <p className="text-gray-600 mb-2">Type : {flight.type}</p>
         <p className="text-gray-600 mb-2"> Time : {flight.time}</p>
         <p className="text-gray-600 mb-2">Meal: {flight.meals}</p>
-        <button className="black_btn">Book this flight</button>
+        <button className="black_btn" onClick={bookFlight}>Book this flight</button>
       </div>
     </div>
   );

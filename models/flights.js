@@ -1,4 +1,4 @@
-import { model , models , Schema } from 'mongoose';
+import { model  , models  , Schema } from 'mongoose';
 
 const FlightSchema = new Schema({
       user : {
@@ -45,5 +45,5 @@ const FlightSchema = new Schema({
 })
 
 
-const Flights =  models.Flight || model(FlightSchema , "Flights")
+const Flights =  models.Flights || model("Flights" , FlightSchema)
 export default Flights;
