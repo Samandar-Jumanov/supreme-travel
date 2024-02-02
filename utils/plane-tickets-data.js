@@ -9,7 +9,6 @@
         "time": "14:30",
         "place": "Seat 7A",
         "type": "Economy",
-        "status": "Confirmed",
         "meals": "Standard"
     },
     {
@@ -22,7 +21,6 @@
         "time": "10:00",
         "place": "Seat 3B",
         "type": "Business",
-        "status": "Pending",
         "meals": "Gourmet"
     },
     {
@@ -35,7 +33,6 @@
         "time": "18:45",
         "place": "Seat 12C",
         "type": "First Class",
-        "status": "Confirmed",
         "meals": "Luxury"
     },
     {
@@ -48,7 +45,6 @@
         "time": "12:15",
         "place": "Seat 5D",
         "type": "Economy",
-        "status": "Cancelled",
         "meals": "Standard"
     },
     {
@@ -61,7 +57,6 @@
         "time": "08:00",
         "place": "Seat 8F",
         "type": "Business",
-        "status": "Confirmed",
         "meals": "Gourmet"
     },
     {
@@ -74,7 +69,6 @@
         "time": "16:30",
         "place": "Seat 1A",
         "type": "First Class",
-        "status": "Pending",
         "meals": "Luxury"
     },
     {
@@ -87,7 +81,6 @@
         "time": "20:45",
         "place": "Seat 6C",
         "type": "Economy",
-        "status": "Confirmed",
         "meals": "Standard"
     },
     {
@@ -100,7 +93,6 @@
         "time": "14:00",
         "place": "Seat 2B",
         "type": "Business",
-        "status": "Cancelled",
         "meals": "Gourmet"
     },
     {
@@ -113,7 +105,6 @@
         "time": "09:30",
         "place": "Seat 10D",
         "type": "First Class",
-        "status": "Pending",
         "meals": "Luxury"
     },
     {
@@ -126,7 +117,6 @@
         "time": "11:20",
         "place": "Seat 4F",
         "type": "Economy",
-        "status": "Confirmed",
         "meals": "Standard"
     },
     {
@@ -139,7 +129,6 @@
         "time": "17:15",
         "place": "Seat 7B",
         "type": "Business",
-        "status": "Cancelled",
         "meals": "Gourmet"
     },
     {
@@ -152,7 +141,6 @@
         "time": "13:40",
         "place": "Seat 9C",
         "type": "First Class",
-        "status": "Pending",
         "meals": "Luxury"
     },
     {
@@ -165,7 +153,6 @@
         "time": "22:00",
         "place": "Seat 3D",
         "type": "Economy",
-        "status": "Confirmed",
         "meals": "Standard"
     },
     {
@@ -178,7 +165,6 @@
         "time": "19:30",
         "place": "Seat 5A",
         "type": "Business",
-        "status": "Cancelled",
         "meals": "Gourmet"
     },
     {
@@ -191,7 +177,6 @@
         "time": "15:45",
         "place": "Seat 11F",
         "type": "First Class",
-        "status": "Pending",
         "meals": "Luxury"
     },
     {
@@ -204,7 +189,6 @@
         "time": "10:10",
         "place": "Seat 6D",
         "type": "Economy",
-        "status": "Confirmed",
         "meals": "Standard"
     },
     {
@@ -217,7 +201,6 @@
         "time": "18:20",
         "place": "Seat 8B",
         "type": "Business",
-        "status": "Cancelled",
         "meals": "Gourmet"
     },
     {
@@ -230,7 +213,6 @@
         "time": "16:00",
         "place": "Seat 1C",
         "type": "First Class",
-        "status": "Pending",
         "meals": "Luxury"
     },
     {
@@ -243,7 +225,6 @@
         "time": "21:15",
         "place": "Seat 4A",
         "type": "Economy",
-        "status": "Confirmed",
         "meals": "Standard"
     }
 ]
