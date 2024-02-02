@@ -1,5 +1,6 @@
-[
+  export const data = [
     {
+        "id": 1,
         "from": "New York",
         "to": "Los Angeles",
         "ticket": "ABC123",
@@ -12,6 +13,7 @@
         "meals": "Standard"
     },
     {
+        "id": 2,
         "from": "London",
         "to": "Paris",
         "ticket": "XYZ456",
@@ -24,6 +26,7 @@
         "meals": "Gourmet"
     },
     {
+        "id": 3,
         "from": "Tokyo",
         "to": "Sydney",
         "ticket": "JKL789",
@@ -36,6 +39,7 @@
         "meals": "Luxury"
     },
     {
+        "id": 4,
         "from": "Chicago",
         "to": "Miami",
         "ticket": "MNO123",
@@ -48,6 +52,7 @@
         "meals": "Standard"
     },
     {
+        "id": 5,
         "from": "Sydney",
         "to": "Singapore",
         "ticket": "PQR456",
@@ -60,6 +65,7 @@
         "meals": "Gourmet"
     },
     {
+        "id": 6,
         "from": "Paris",
         "to": "Rome",
         "ticket": "STU789",
@@ -72,6 +78,7 @@
         "meals": "Luxury"
     },
     {
+        "id": 7,
         "from": "Los Angeles",
         "to": "New York",
         "ticket": "VWX123",
@@ -84,6 +91,7 @@
         "meals": "Standard"
     },
     {
+        "id": 8,
         "from": "Rome",
         "to": "Barcelona",
         "ticket": "YZA456",
@@ -96,6 +104,7 @@
         "meals": "Gourmet"
     },
     {
+        "id": 9,
         "from": "Singapore",
         "to": "Tokyo",
         "ticket": "BCD789",
@@ -108,6 +117,7 @@
         "meals": "Luxury"
     },
     {
+        "id": 10,
         "from": "Miami",
         "to": "Chicago",
         "ticket": "EFG123",
@@ -120,6 +130,7 @@
         "meals": "Standard"
     },
     {
+        "id": 11,
         "from": "Barcelona",
         "to": "London",
         "ticket": "HIJ456",
@@ -132,6 +143,7 @@
         "meals": "Gourmet"
     },
     {
+        "id": 12,
         "from": "New York",
         "to": "Tokyo",
         "ticket": "KLM789",
@@ -144,6 +156,7 @@
         "meals": "Luxury"
     },
     {
+        "id": 13,
         "from": "Los Angeles",
         "to": "Sydney",
         "ticket": "NOP123",
@@ -156,6 +169,7 @@
         "meals": "Standard"
     },
     {
+        "id": 14,
         "from": "London",
         "to": "Paris",
         "ticket": "QRS456",
@@ -168,6 +182,7 @@
         "meals": "Gourmet"
     },
     {
+        "id": 15,
         "from": "Tokyo",
         "to": "Singapore",
         "ticket": "TUV789",
@@ -180,6 +195,7 @@
         "meals": "Luxury"
     },
     {
+        "id": 16,
         "from": "Chicago",
         "to": "Miami",
         "ticket": "WXY123",
@@ -192,6 +208,7 @@
         "meals": "Standard"
     },
     {
+        "id": 17,
         "from": "Sydney",
         "to": "Rome",
         "ticket": "YZA456",
@@ -204,6 +221,7 @@
         "meals": "Gourmet"
     },
     {
+        "id": 18,
         "from": "Paris",
         "to": "London",
         "ticket": "BCD789",
@@ -216,6 +234,7 @@
         "meals": "Luxury"
     },
     {
+        "id": 19,
         "from": "Los Angeles",
         "to": "New York",
         "ticket": "EFG123",
@@ -228,4 +247,3 @@
         "meals": "Standard"
     }
 ]
-
