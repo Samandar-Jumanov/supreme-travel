@@ -27,3 +27,15 @@ export const POST = async (request) =>{
      }
 };
 
+
+export const GET = async (request , { params }) =>{
+      try {
+          await connectDb();
+          const flights = await Flights.findById({ user : params.id }).populate("user")
+          return new Response(JSON.stringify(flights), 200);
+      } catch (error) {
+          return new Response(error.message, 500);
+      }
+};
+
+
