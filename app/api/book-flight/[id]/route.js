@@ -3,7 +3,7 @@ import Flights from "@/models/flights";
 
 export const GET = async (request, { params }) => {
     try {
-      // await connectDb();
+      await connectDb();
       const flights = await Flights.find({ userId : params.id })
       .populate("userId")
     
