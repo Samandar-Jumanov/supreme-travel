@@ -2,13 +2,15 @@
 
 
 import connectDb from "@/utils/connectMongo";
-import Thoughts from "@/models/thoughts";
+import models from "@/models/models";
+
 
 export const GET = async (request, { params }) => {
     try {
-      await connectDb();
-      const thoughts = await Thoughts.find({ userId : params.id })
-    .populate("userId")
+      // await connectDb();
+      const thoughts = await models.Thoughts.find( { userId : params.id })
+      .populate("userId")
+    .populate("userId") 
     
       return new Response(JSON.stringify(thoughts, { status : 200}));
     } catch (error) {

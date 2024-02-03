@@ -1,5 +1,5 @@
 import connectDb from "@/utils/connectMongo";
-import Flights from "@/models/flights";
+import models from "@/models/models";
 
 export const POST = async (request) => {
   await connectDb();
@@ -11,7 +11,7 @@ export const POST = async (request) => {
     }
 
    
-    const newFlight = new Flights({
+    const newFlight = new models.Flights({
       userId: userId,
       from: from,
       to: to,

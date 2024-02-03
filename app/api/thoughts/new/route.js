@@ -1,9 +1,7 @@
 //create new thought for your own flight 
 
 import connectDb from "@/utils/connectMongo";
-import Thoughts from "@/models/thoughts";
-import Flights from "@/models/flights";
-import User from "@/models/user";
+import models from "@/models/models";
 
 export const POST = async ( request ) =>{
     const { userId , flightId , thoughtText , username , userImage , userEmail } = request.json();
@@ -13,12 +11,12 @@ export const POST = async ( request ) =>{
         console.log(flightId);
 
         // await connectDb();
-         const user = await User.findById(userId || "65be27dff4e43008fa6846b8" ) ;
+         const user = await models.User.findById(userId || "65be27dff4e43008fa6846b8" ) ;
          if(!user)  return new Response("Cannot find user" , { status : 500});
-         const flight = await Flights.findById(flightId || "65be27f3f4e43008fa6846bc" ) 
+         const flight = await models.Flights.findById(flightId || "65be27f3f4e43008fa6846bc" ) 
          if(!flight) return new Response("Cannot find flight " , { status : 404})
          
-         const newThought = new Thoughts({
+         const newThought = new models.Thoughts({
             userId : userId || "65be27dff4e43008fa6846b8",
             flightId : flightId || "65be27f3f4e43008fa6846bc",
             thoughtText : thoughtText || "Initial",

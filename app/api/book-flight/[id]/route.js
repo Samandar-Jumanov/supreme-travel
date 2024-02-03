@@ -1,10 +1,10 @@
 import connectDb from "@/utils/connectMongo";
-import Flights from "@/models/flights";
+import models from "@/models/models";
 
 export const GET = async (request, { params }) => {
     try {
       await connectDb();
-      const flights = await Flights.find({ userId : params.id })
+      const flights = await models.Flights.find({ userId : params.id })
       .populate("userId")
     
       return new Response(JSON.stringify(flights , { status : 200}));
