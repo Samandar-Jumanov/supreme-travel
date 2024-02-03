@@ -11,11 +11,10 @@ export const POST = async ( request , { params }) =>{
     try {
         // await connectDb();
          const user = await User.findById(userId);
-         if(!user) returnResponse("Cannot find user" , 500);
+         if(!user)  return new Response("Cannot find user" , { status : 500})
          const flight = await Flights.findById(flightId);
-         if(!flight) returnResponse("Cannot find flight", 500);
+         if(!flight) return new Response("Cannot find flight " , { status : 404})
          
-         // if both user and flight id is valid then create one thought 
          const newThought = new Thoughts({
             userId : userId,
             flightId : flightId,
@@ -31,14 +30,10 @@ export const POST = async ( request , { params }) =>{
          return new Response(JSON.stringify(savedThought, { status : 200}));
     } catch (error) {
         console.log(error.message)
-        returnResponse("Internal server error" , 500)
+         return new Response(error.message , 500)
     }
    
 }
 
 
 
-
-function returnResponse ( message , status ){
-    return new Response(JSON.stringify(message, { status : status}));
-}
