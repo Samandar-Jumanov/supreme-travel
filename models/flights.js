@@ -14,5 +14,5 @@ const FlightSchema = new Schema({
 });
 
 
-const Flights =  models.Flights || model("Flight" , FlightSchema)
+const Flights = models.Flights ||  model("flights" , FlightSchema)
 export default Flights;

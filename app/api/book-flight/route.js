@@ -2,27 +2,38 @@ import connectDb from "@/utils/connectMongo";
 import Flights from "@/models/flights";
 
 export const POST = async (request) => {
-  const {   userId , from, to, ticket, price, date, time, place, type, meals } = request.json()
+  await connectDb();
   try {
-    await connectDb();
-    const newFlight =  new Flights({
-        userId : userId ,
-        from: from,
-        to: to,
-        ticket: ticket,
-        price: price,
-        date: date,
-        time: time,
-        place: place,
-        type: type,
-        meals: meals,
-    })
-    await newFlight.save()
+    const { userId, from, to, ticket, price, date, time, place, type, meals } = await request.json();
+
+    if (!userId || !from || !to || !ticket || !price || !date || !time || !place || !type || !meals) {
+      // Handle missing or invalid parameters
+      return new Response("Missing or invalid parameters", { status: 400 });
+    }
+
+    console.log(`Request: ${userId} ${from} ${to}`);
+
+    // Uncomment the following lines when you are ready to save to the database
+    // await connectDb();
+    const newFlight = new Flights({
+      userId: userId,
+      from: from,
+      to: to,
+      ticket: ticket,
+      price: price,
+      date: date,
+      time: time,
+      place: place,
+      type: type,
+      meals: meals,
+    });
     
-    return new Response("Succes" , { status : 201});
+    await newFlight.save();
+
+    return new Response("Success", { status: 201 });
   } catch (error) {
     console.error(error.message);
-    return new Response(error.stack  , 500)
+    return new Response(error.stack, { status: 500 });
   }
 };
 

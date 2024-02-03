@@ -13,34 +13,51 @@ const FlightDetail = () => {
   const { data : session } = useSession();
 
   const bookFlight = async () => {
-    const userId = await session.user.id
-    if(!userId) alert("user id  is missing ")
+    const userId = session?.user?.id;
+  
+    if (!userId) {
+      alert("User ID is missing.");
+      return;
+    }
+  
+    const requestBody = {
+      userId: userId,
+      from: flight?.from,
+      to: flight?.to,
+      ticket: flight?.ticket,
+      price: flight?.price,
+      date: flight?.date,
+      time: flight?.time,
+      place: flight?.place,
+      type: flight?.type,
+      meals: flight?.meals,
+    };
+  
     
-      try {
-        const response = await fetch('/api/book-flight', {
-          method: 'POST',
-          body: JSON.stringify({
-            userId : userId ,
-            from : flight.from, 
-            to : flight.to , 
-            ticket : flight.ticket, 
-            price : flight.price ,
-            date : flight.date,
-            time : flight.time, 
-            place : flight.place, 
-            type : flight.type, 
-            meals : flight.meals 
-          }),
-        });
-
-        if(response.ok){
-                router.push(`alert?response=${response.statusText}`)
-        }
-       console.log(response)
-      } catch (error) {
-        console.error('An error occurred during the fetch:', error);
+    if (Object.values(requestBody).some((value) => value === undefined || value === null)) {
+      alert("One or more required fields are missing.");
+      return;
+    }
+  
+    try {
+      const response = await fetch('/api/book-flight', {
+        method: 'POST',
+        body: JSON.stringify(requestBody),
+        headers: {
+          'Content-Type': 'application/json',
+        },
+      });
+  
+      if (response.ok) {
+        router.push(`alert?response=${response.statusText}`);
       }
-    } 
+      console.log(response);
+    } catch (error) {
+      console.error('An error occurred during the fetch:', error);
+    }
+
+    console.log(requestBody)
+  };
   
   
 
