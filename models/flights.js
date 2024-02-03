@@ -10,9 +10,9 @@ const FlightSchema = new Schema({
   time: { type: String, required: true },
   place: { type: String, required: true },
   type: { type: String, required: true },
-  meals: { type: String, required: true },
+  meals: { type: String, required: true },  
 });
 
-models.Flights = model("Flights" , FlightSchema)
 
-export default models.Flights;
+const Flights = models.Flights 
+export default Flights;
