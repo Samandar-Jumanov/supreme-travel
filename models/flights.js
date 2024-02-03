@@ -1,4 +1,4 @@
-import { model  , models  , Schema } from 'mongoose';
+import mongoose, { model  , models  , Schema } from 'mongoose';
 
 const FlightSchema = new Schema({
   userId: { type : Schema.Types.ObjectId, required: true},
@@ -12,6 +12,7 @@ const FlightSchema = new Schema({
   type: { type: String, required: true },
   meals: { type: String, required: true },  
 });
+
 
 
 const Flights = models.Flights 
