@@ -1,3 +1,6 @@
+//get user own thoughts 
+
+
 import connectDb from "@/utils/connectMongo";
 import Thoughts from "@/models/thoughts";
 

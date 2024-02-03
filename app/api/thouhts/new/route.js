@@ -1,3 +1,5 @@
+//create new thought for your own flight 
+
 import connectDb from "@/utils/connectMongo";
 import Thoughts from "@/models/thoughts";
 import Flights from "@/models/flights";
