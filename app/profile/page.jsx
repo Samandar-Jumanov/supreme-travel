@@ -1,6 +1,7 @@
 "use client";
 import { useRouter } from "next/navigation";
-
+import Flight from "@/components/Flight";
+import  FightsOrdered from '@/components/Fights-ordered'
 
 const MyProfile = () => {
   const router = useRouter()
@@ -12,6 +13,7 @@ const MyProfile = () => {
     </h1>
     <p className='desc text-left'>It is your profile , Feel free to book a flight or cancel them</p>
     <button className="black_btn" onClick={() => router.push("/")}> Back to home </button>
+     <FightsOrdered/>
   </section>
   );
 };

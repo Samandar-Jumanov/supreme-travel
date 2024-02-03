@@ -13,6 +13,6 @@ const FlightSchema = new Schema({
   meals: { type: String, required: true },
 });
 
+models.Flights = model("Flights" , FlightSchema)
 
-const Flights = models.Flights ||  model("flights" , FlightSchema)
-export default Flights;
+export default models.Flights;

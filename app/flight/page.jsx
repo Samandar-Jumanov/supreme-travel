@@ -40,7 +40,7 @@ const FlightDetail = () => {
     }
   
     try {
-      const response = await fetch('/api/book-flight', {
+      const response = await fetch('/api/book-flight/new', {
         method: 'POST',
         body: JSON.stringify(requestBody),
         headers: {
