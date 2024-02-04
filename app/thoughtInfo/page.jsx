@@ -33,7 +33,7 @@ const ThoughtInfo = () => {
           <div className="mb-4 flex items-center justify-center">
             <div className="mr-4">
               <Image
-                src="https://lh3.googleusercontent.com/a/ACg8ocLIAyDpUQ-yigGjY1yR3S_YvNx1bmHtj5sIS75nUAPX=s96-c"
+                src="https://lh3.googleusercontent.com/a/ACg8ocLIAyDpUQ-yigGjY1yR3S_YvNx1bmHtj5sIS75nUAPX=s96-c" // adding valid image for now 
                 alt='user_image'
                 width={50}
                 height={60}
