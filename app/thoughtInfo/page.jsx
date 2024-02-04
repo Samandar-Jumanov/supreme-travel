@@ -5,6 +5,7 @@ import { useRouter, useSearchParams } from 'next/navigation';
 
 const Page = () => {
   const router = useRouter();
+  const [thoughtInfo , setThoughtInfo] = useState({});
   const searchParams = useSearchParams();
   const thoughtId = searchParams.get("thoughtId");
   
@@ -12,14 +13,17 @@ const Page = () => {
   useEffect(() => {
       const fetchThought = async () =>{
           const response = await fetch(`/api/thoughtInfo/${thoughtId}`);
-          console.log(response.status)
+           setThoughtInfo(response.json())
       }
         if(thoughtId)  fetchThought()
+        console.log(thoughtInfo)
   } , [])
-
+  
   return (
     <div>
-
+      <h1> 
+      {thoughtInfo.thoughtText}
+      </h1>
     </div>
   );
 };
