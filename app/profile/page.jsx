@@ -1,7 +1,7 @@
 "use client";
 import { useRouter } from "next/navigation";
-import Flight from "@/components/Flight";
 import  FightsOrdered from '@/components/Fights-ordered'
+
 
 const MyProfile = () => {
   const router = useRouter()
