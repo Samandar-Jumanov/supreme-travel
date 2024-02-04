@@ -4,7 +4,7 @@ import connectDb from "@/utils/connectMongo";
 export const GET = async ( request ) =>{
     try {
           await connectDb();
-          const allThoughts = await models.Thoughts.find({});
+          const allThoughts = await models.Thoughts.find({}).maxTimeMS(20000)
           return new Response(JSON.stringify(allThoughts ) , { status : 200})
     } catch (error) {
           console.log(error.message);
