@@ -19,7 +19,7 @@ const DirectionsMap = ({ apiKey, origin, destination }) => {
         zoom={8}
       >
         <DirectionsService
-          options={{ destination, origin, travelMode: 'DRIVING' }}
+          options={{ destination, origin, }}
           callback={directionsCallback}
         />
         {response && <DirectionsRenderer directions={response} />}

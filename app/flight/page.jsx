@@ -86,6 +86,7 @@ const FlightDetail = () => {
         <p className="text-gray-600 mb-2">Meal: {flight.meals}</p>
         <button className="black_btn" onClick={bookFlight}>Book this flight</button>
       </div>
+      <button>See in google maps</button>
     </div>
   );
 };
