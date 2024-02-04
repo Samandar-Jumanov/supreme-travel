@@ -35,7 +35,7 @@ export const POST = async ( request ) =>{
          return new Response(error.message , 500)
     }
    
-}
+};
 
 
 
