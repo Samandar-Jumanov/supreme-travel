@@ -1,6 +1,5 @@
 "use client"
 
-
 import React , { useState } from 'react';
 import { useRouter } from 'next/navigation'
 const Thought = ({ thoughts }) => {
@@ -9,7 +8,7 @@ const Thought = ({ thoughts }) => {
 
   const provideMorInfo = (thoughtId  ) =>{
        router.push(`thoughtInfo?thoughtId=${thoughtId}`);
-  }
+  };
 
   return (
     <div className="flex flex-col md:flex-row md:space-x-4">

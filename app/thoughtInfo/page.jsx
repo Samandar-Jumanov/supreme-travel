@@ -2,30 +2,57 @@
 
 import React, { useState, useEffect } from 'react';
 import { useRouter, useSearchParams } from 'next/navigation';
+import Image from 'next/image';
 
-const Page = () => {
+const ThoughtInfo = () => {
   const router = useRouter();
-  const [thoughtInfo , setThoughtInfo] = useState({});
+  const [thoughtInfo, setThoughtInfo] = useState(null);
   const searchParams = useSearchParams();
   const thoughtId = searchParams.get("thoughtId");
-  
 
   useEffect(() => {
-      const fetchThought = async () =>{
-          const response = await fetch(`/api/thoughtInfo/${thoughtId}`);
-           setThoughtInfo(response.json())
+    const fetchThought = async () => {
+      try {
+        const response = await fetch(`/api/thoughtInfo/${thoughtId}`);
+        const data = await response.json();
+        setThoughtInfo(data);
+      } catch (error) {
+        console.error("Error fetching thought:", error);
       }
-        if(thoughtId)  fetchThought()
-        console.log(thoughtInfo)
-  } , [])
-  
+    };
+
+    if (thoughtId) {
+      fetchThought();
+    }
+  }, [thoughtId]);
+
   return (
-    <div>
-      <h1> 
-      {thoughtInfo.thoughtText}
-      </h1>
+    <div className="container mx-auto mt-8 p-4">
+      {thoughtInfo ? (
+        <div className="text-center">
+          <h1 className="text-3xl font-bold mb-4">{thoughtInfo.thoughtText}</h1>
+          <div className="mb-4">
+            <h1 className="text-lg font-semibold">{thoughtInfo.username}</h1>
+            <h1 className="text-sm text-gray-500">{thoughtInfo.userEmail}</h1>
+            {/* <Image
+              src={thoughtInfo?.userImage}
+              alt='user_image'
+              width={50}
+              height={60}
+              className="rounded-full"
+            /> */}
+          </div>
+          <p className="mb-4">Did you find it helpful?</p>
+          <div className="flex justify-center space-x-4">
+            <button className="bg-green-500 text-white px-4 py-2 rounded">Yes</button>
+            <button className="bg-red-500 text-white px-4 py-2 rounded">No</button>
+          </div>
+        </div>
+      ) : (
+        <div className="text-center">Loading.....</div>
+      )}
     </div>
   );
 };
 
-export default Page;
+export default ThoughtInfo;
