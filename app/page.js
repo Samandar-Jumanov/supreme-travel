@@ -1,7 +1,7 @@
 "use client"
 import Thoughts from "@/components/Thoughts"
+
 const Home  = () => {
- 
 
   return (
     <div> 

@@ -1,39 +1,29 @@
 "use client"
 import React , { useState , useEffect } from 'react'
+import Thought from './Thought'
 
 const Thoughts = () => {
     const [thoughts, setThoughts] = useState([])
-    const [loading, setLoading] = useState(true)
-    const [error, setError] = useState(null)
+    // const [loading, setLoading] = useState(true)
+    // const [error, setError] = useState(null)
+      
+    useEffect(() =>{
+          const fetchAllThoughts = async () =>{
+            console.log("Request sent ")
+                const response = await fetch("/api/thoughts")
+            //    setThoughts(response.json())
+               console.log(response.json())
+          }
+          fetchAllThoughts()
+    } , []);
 
-    useEffect(() => {
-        fetch('/api/thoughts')
-     .then(res => res.json())
-     .then(
-            (result) => {
-                setThoughts(result)
-                setLoading(false)
-            },
-     
-            (error) => {
-                setError(error)
-                setLoading(false)
-            }
-        )
-    }, [])
 
-    if (loading) {
-        return <div>Loading...</div>
-    }
-
-    if (error) {
-        return <div>Error: {error.message}</div>
-    }
+ 
   return (
     <div>
-        {thoughts.map((each) =>{
-              return <div key={each.id}>{each.thoughtText}</div>
-        })}
+       {/* <Thought 
+         thoughts={thoughts}
+         /> */}
     </div>
   )
 }
