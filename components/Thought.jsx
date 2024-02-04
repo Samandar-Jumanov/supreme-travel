@@ -1,16 +1,16 @@
+"use client"
+
 import React from 'react'
 
-const Thought = ( { thoughts }) => {
-  return (
-    <div>
-            {thoughts.map(thought => (
-                <div key={thought._id}>
-                    <h2>{thought.thoughtText}</h2>
-                    <p>{thought.username}</p>
-                </div>
-            ))}
-    </div>
-  )
-}
+const Thought = ( { thoughts }) =>{
+   return (
+       <div>
 
-export default Thought
+        {thoughts.map((each) =>(
+            <div>
+              {each.username}
+            </div>
+        ))}
+       </div>
+   )
+}

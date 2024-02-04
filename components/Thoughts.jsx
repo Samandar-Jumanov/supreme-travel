@@ -7,23 +7,30 @@ const Thoughts = () => {
     // const [loading, setLoading] = useState(true)
     // const [error, setError] = useState(null)
       
-    useEffect(() =>{
-          const fetchAllThoughts = async () =>{
-            console.log("Request sent ")
-                const response = await fetch("/api/thoughts")
-            //    setThoughts(response.json())
-               console.log(response.json())
+    useEffect(() => {
+      const fetchAllThoughts = async () => {
+          try {
+              console.log("Request sent");
+              const response = await fetch("/api/thoughts");
+              const data = await response.json();
+              setThoughts(data); 
+          } catch (error) {
+              console.error("Error fetching thoughts:", error);
+             
           }
-          fetchAllThoughts()
-    } , []);
+      };
+  
+      fetchAllThoughts();
+  }, []);
+  
 
 
  
   return (
     <div>
-       {/* <Thought 
+       <Thought 
          thoughts={thoughts}
-         /> */}
+         />
     </div>
   )
 }
