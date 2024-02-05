@@ -6,6 +6,8 @@ import Image from "next/image";
 import { useSession  } from 'next-auth/react'
 
 const FlightDetail = () => {
+  const googleMapsApi = process.env.GOOGLE_MAPS;
+  
   const router = useRouter()
   const searchParams = useSearchParams();
   const idx = searchParams.get("id");
