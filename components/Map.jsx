@@ -2,7 +2,7 @@
 
 import { GoogleMap, LoadScript, DirectionsService, DirectionsRenderer } from '@react-google-maps/api';
 import { useState } from 'react';
-const DirectionsMap = ({ apiKey, origin, destination }) => {
+const DirectionsMap = ({ destination }) => {
   const [response, setResponse] = useState(null);
 
   const directionsCallback = (res) => {
@@ -10,6 +10,9 @@ const DirectionsMap = ({ apiKey, origin, destination }) => {
       setResponse(res);
     }
   };
+
+  const apiKey = process.env.GOOGLE_MAPS 
+  const origin = { lat: 37.7749, lng: -122.4194 };
 
   return (
     <LoadScript googleMapsApiKey={apiKey}>
